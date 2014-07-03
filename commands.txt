@@ -1,0 +1,43 @@
+# copy solr schema
+SHOWCASE=~/workspace2/lily-showcase
+cd ~/solr-4.8.1/example
+cp $SHOWCASE/schema.xml solr/collection1/conf
+
+# starting solr
+java -jar start.jar
+
+# starting lily
+cd ~/lily-2.4
+bin/lily-server -l debug -m org.lilyproject.indexer.engine
+
+# Showcase
+# --------
+SHOWCASE=~/workspace2/lily-showcase
+cd ~/lily-2.4/bin
+
+# importing lily shema
+./lily-import -s $SHOWCASE/src/main/resources/at/ac/ait/schema.json
+
+# add indexer configuration
+./lily-add-index --name books \
+               --indexer-config $SHOWCASE/indexerconf.xml \
+               --solr-mode classic \
+               --solr-shards shard1:http://localhost:8983/solr
+
+# list indexes
+./lily-list-indexes
+
+# batch index building
+./lily-update-index -n books --build-state BUILD_REQUESTED
+
+# remove indexer configuration
+./lily-update-index -n books --state DELETE_REQUESTED
+
+# retrieve record
+curl http://localhost:12060/repository/record/UUID.28da4e87-fc76-423a-a23f-44ee7c9a35ca | json_reformat
+
+# delete record
+curl -X  DELETE http://localhost:12060/repository/record/UUID.ef05374e-7961-41c4-a10e-2224c30071d0
+
+# clear solr index
+curl http://localhost:8983/solr/update/?commit=true -d "<delete><query>*:*</query></delete>" -H "Content-Type: text/xml"

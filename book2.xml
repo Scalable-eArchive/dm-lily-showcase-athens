@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<book>
+	<title>Hadoop: The Definitive Guide, 3rd Edition</title>
+	<author>Tom White</author>
+	<genre>Computer</genre>
+	<price>49.99</price>
+	<publish_date>2012-05-01</publish_date>
+	<description>Ready to unlock the power of your data? With this comprehensive guide, you’ll learn how to build and maintain reliable, scalable, distributed systems with Apache Hadoop. This book is ideal for programmers looking to analyze datasets of any size, and for administrators who want to set up and run Hadoop clusters.</description>
+</book>

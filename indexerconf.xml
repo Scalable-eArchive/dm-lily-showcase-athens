@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Copyright 2013 NGDATA nv
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<indexer xmlns:b="at.ac.ait">
+  <recordFilter>
+    <includes>
+      <include recordType="b:Book" vtags="last"/>
+    </includes>
+  </recordFilter>
+
+  <fields>
+    <field name="title" value="b:title"/>
+    <field name="author" value="b:author"/>
+    <field name="genre" value="b:genre"/>
+    <field name="price" value="b:price"/>
+    <field name="publish_date" value="b:publish_date"/>
+    <field name="description" value="b:description"/>
+  </fields>
+
+</indexer>

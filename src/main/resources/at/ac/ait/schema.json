@@ -1,0 +1,53 @@
+{
+  namespaces: {
+    /* Declaration of namespace prefixes. */
+    "at.ac.ait": "p"
+  },
+  fieldTypes: [
+    {
+      /* The 'p' refers to the namespace declared above, the dollar sign
+         separates the namespace prefix from the name. */
+      name: "p$title",
+      valueType: "STRING",
+      scope: "non_versioned"
+    },
+    {
+      name: "p$author",
+      valueType: "STRING",
+      scope: "non_versioned"
+    },
+    {
+      name: "p$genre",
+      valueType: "STRING",
+      scope: "non_versioned"
+    },
+    {
+      name: "p$price",
+      valueType: "DOUBLE",
+      scope: "non_versioned"
+    },
+    {
+      name: "p$publish_date",
+      valueType: "DATE",
+      scope: "non_versioned"
+    },
+    {
+      name: "p$description",
+      valueType: "STRING",
+      scope: "non_versioned"
+    }
+  ],
+  recordTypes: [
+    {
+      name: "p$Book",
+      fields: [
+        {name: "p$title", mandatory: true},
+        {name: "p$author", mandatory: false},
+        {name: "p$genre", mandatory: false},
+        {name: "p$price", mandatory: false},
+        {name: "p$publish_date", mandatory: false},
+        {name: "p$description", mandatory: false}
+      ]
+    }
+  ]
+}
