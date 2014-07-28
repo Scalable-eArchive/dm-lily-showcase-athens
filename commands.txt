@@ -1,5 +1,5 @@
 # copy solr schema
-SHOWCASE=~/workspace2/lily-showcase
+SHOWCASE=~/git/dm-lily-showcase-athens
 cd ~/solr-4.8.1/example
 cp $SHOWCASE/schema.xml solr/collection1/conf
 
@@ -12,7 +12,7 @@ bin/lily-server -l debug -m org.lilyproject.indexer.engine
 
 # Showcase
 # --------
-SHOWCASE=~/workspace2/lily-showcase
+SHOWCASE=~/git/dm-lily-showcase-athens
 cd ~/lily-2.4/bin
 
 # importing lily shema
